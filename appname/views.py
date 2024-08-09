@@ -3,3 +3,6 @@ from django.shortcuts import render
 # Create your views here.
 def index(request):
     return render(request, 'appname/index.html')
+
+def demo(request):
+    return render(request,'appname/test.html')
