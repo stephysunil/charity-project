@@ -12,7 +12,7 @@ class UserDetail(models.Model):
     description = models.CharField( max_length=100)
     no_year = models.IntegerField()
 
-    class SponserDetail(models.Model):
+class SponserDetail(models.Model):
         sponserid = models.IntegerField()
         name = models.CharField(max_length=50)
         mobile_no = models.BigIntegerField()
