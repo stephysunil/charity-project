@@ -9,3 +9,6 @@ def test(request):
 
 def login(request):
     return render(request,'appname/login.html')
+
+def regspo(request):
+    return render(request,'appname/regspo.html')
