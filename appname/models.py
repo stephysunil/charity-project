@@ -6,10 +6,13 @@ class UserDetail(models.Model):
     address = models.CharField(max_length=50)
     mobile_no = models.BigIntegerField()
     location = models.CharField(max_length=50)
-    photo = models.models.ImageField( upload_to="pics",blank=True,null=True)
+    photo = models.ImageField( upload_to="pics",blank=True,null=True)
     email = models.CharField(max_length=50)
     description = models.CharField( max_length=100)
     no_year = models.IntegerField()
+
+    def __str__(self):
+        return self.name
 
 class SponserDetail(models.Model):
         name = models.CharField(max_length=50)
