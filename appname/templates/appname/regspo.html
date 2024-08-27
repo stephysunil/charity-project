@@ -13,12 +13,12 @@
             {% if registered %}
                 <h1>Thanks for registering, Please Log in! <br><br><a href="{%url 'index' %}"><button>Login</button></a>  </h1>
             {% else %}
-                <h1>Registration for Customer:</h1>
+                <h1>Registration for Sponsor:</h1>
                 {% load crispy_forms_tags %}
                 <form action="" method="POST">
                     {% csrf_token %}
-                    {{ var_customerForm|crispy }}
-                    {{ var_customerAddForm|crispy }}
+                    {{ var_sponsorForm|crispy }}
+                    {{ var_sponsorAddForm|crispy }}
                     <input type="submit" value="Register" class="btn btn-primary">
                 </form>
             {% endif %}
