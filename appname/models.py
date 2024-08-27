@@ -6,7 +6,7 @@ class UserDetail(models.Model):
     address = models.CharField(max_length=50)
     mobile_no = models.BigIntegerField()
     location = models.CharField(max_length=50)
-    # photo = 
+    photo = models.models.ImageField( upload_to="pics",blank=True,null=True)
     email = models.CharField(max_length=50)
     description = models.CharField( max_length=100)
     no_year = models.IntegerField()
