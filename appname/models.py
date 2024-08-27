@@ -2,7 +2,6 @@ from django.db import models
 
 # Create your models here.
 class UserDetail(models.Model):
-    userid = models.IntegerField()
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
     mobile_no = models.BigIntegerField()
@@ -13,18 +12,14 @@ class UserDetail(models.Model):
     no_year = models.IntegerField()
 
 class SponserDetail(models.Model):
-        sponserid = models.IntegerField()
         name = models.CharField(max_length=50)
         mobile_no = models.BigIntegerField()
         email = models.CharField(max_length=50)
 
 class SponserShip(models.Model):
-    userid = models.IntegerField()
-    sponserid = models.IntegerField()
     amount = models.BigIntegerField()
 
 class MedicalTeam(models.Model):
-    Medicalid = models.IntegerField()
     member1name = models.CharField( max_length=50)
     member2name = models.CharField( max_length=50)
     mobile_no = models.BigIntegerField()
