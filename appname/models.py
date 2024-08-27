@@ -5,31 +5,26 @@ from django.contrib.auth.models import User
 class UserDetail(models.Model):
     patient=models.OneToOneField(User,on_delete=models.CASCADE,null=True)
     is_patient=models.BooleanField(default=True)
-    uname = models.CharField(max_length=50,null=True)
     uaddress = models.CharField(max_length=50,null=True)
     umobile_no = models.BigIntegerField(null=True)
     ulocation = models.CharField(max_length=50,null=True)
     uphoto = models.ImageField( upload_to="pics",blank=True,null=True)
-    email = models.CharField(max_length=50,null=True)
     description = models.CharField( max_length=100)
     no_year = models.IntegerField()
     is_approved= models.BooleanField(default=False)
 
-    # def __str__(self):
-    #     return self.uname
+    def __str__(self):
+        return self.patient.username
 
 class SponsorDetail(models.Model):
         sponsor=models.OneToOneField(User,on_delete=models.CASCADE,null=True)
-        
-
-        
         smobile_no = models.BigIntegerField(null=True)
         is_patient=models.BooleanField(default=False)
         
 
 
-        # def __str__(self):
-        #     return self.sname
+        def __str__(self):
+            return self.sponsor.username
 
 
 class SponsorShip(models.Model):
