@@ -20,15 +20,12 @@ class UserDetail(models.Model):
 
 class SponsorDetail(models.Model):
         sponsor=models.OneToOneField(User,on_delete=models.CASCADE,null=True)
-        is_patient=models.BooleanField(default=False)
+        
 
-        sname = models.CharField(max_length=50,null=True)
+        
         smobile_no = models.BigIntegerField(null=True)
-        semail = models.CharField(max_length=50,null=True)
-        cardnumber=models.CharField( max_length=16,null=True)
-        month=models.CharField( max_length=2,null=True)
-        year=models.CharField( max_length=4,null=True)
-        cvv=models.CharField( max_length=3,null=True)
+        is_patient=models.BooleanField(default=False)
+        
 
 
         # def __str__(self):
@@ -45,6 +42,10 @@ class SponsorShip(models.Model):
     smobile_no= models.BigIntegerField(null=True)
     semail= models.CharField(max_length=50,null=True)
     amount = models.BigIntegerField()
+    cardnumber=models.CharField( max_length=16,null=True)
+    month=models.CharField( max_length=2,null=True)
+    year=models.CharField( max_length=4,null=True)
+    cvv=models.CharField( max_length=3,null=True)
 
     # def __str__(self):
     #     return self.sname
