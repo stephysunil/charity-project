@@ -8,8 +8,8 @@ urlpatterns = [
     path ('login/',login),
     path ('regspo/',regspo),
     path ('regus/',regus),
-    path ('spoboard/',spoboard),
-    path ('userboard/',userboard),
+    path ('spoboard/',spoboard,name="sponsor_dashboard"),
+    path ('userboard/',userboard,name="user_dashboard"),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,

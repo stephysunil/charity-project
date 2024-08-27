@@ -1,15 +1,43 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .form import sponsorAddForm,sponsorForm,userForm,userAddForm
+from django.contrib import messages, auth
+from .models import UserDetail,SponsorDetail,SponsorShip
 
 # Create your views here.
 def index(request):
     return render(request, 'appname/index.html')
 
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username=username, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            try:
+                if UserDetail.objects.filter(patient=user).exists():
+                    return redirect('user_dashboard')
+                elif SponsorDetail.objects.filter(sponsor=user).exists():
+                    return redirect('sponsor_dashboard')
+                else:
+                    messages.info(request, "User type is not recognized.")
+                    return redirect('appname/login.html')
+            except Exception as e:
+                messages.error(request, f"An error occurred: {str(e)}")
+                return redirect('appname/login.html')
+        else:
+            messages.info(request, "Invalid login details!")
+            return redirect('appname/login.html')
+    
+    return render(request, "appname/login.html")
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
+
 def test(request):
     return render(request,'appname/test.html')
-
-def login(request):
-    return render(request,'appname/login.html')
 
 def regspo(request):
     registered = False
@@ -58,5 +86,6 @@ def spoboard(request):
 
 def userboard(request):
     return render(request,'appname/userboard.html')
+
 
 
