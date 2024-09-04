@@ -1,4 +1,12 @@
-admin
+Admin:
+username:admin
+password:pass
 stephy@gmail.com
-pass
-vvc
+
+User
+username:sajin
+password:password
+
+Sponser
+username:jaison
+password:password
