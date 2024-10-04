@@ -1,13 +1,14 @@
 from django.urls import path
-from .views import index,test,login,regspo,regus,spoboard,userboard
+from .views import index,feed,login,regspo,regus,spoboard,userboard,pay
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('',index,name='index'),
-    path ('test/',test),
+    path ('feed/',feed),
     path ('login/',login),
     path ('regspo/',regspo),
     path ('regus/',regus),
+    path ('pay/',pay),
     path ('spoboard/',spoboard,name="sponsor_dashboard"),
     path ('userboard/',userboard,name="user_dashboard"),
 ]

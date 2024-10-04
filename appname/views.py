@@ -36,8 +36,8 @@ def logout(request):
     auth.logout(request)
     return redirect('/')
 
-def test(request):
-    return render(request,'appname/test.html')
+def feed(request):
+    return render(request,'appname/feedback.html')
 
 def regspo(request):
     registered = False
@@ -86,6 +86,9 @@ def spoboard(request):
 
 def userboard(request):
     return render(request,'appname/userboard.html')
+
+def pay(request):
+    return render(request,'appname/payment.html')
 
 
 
