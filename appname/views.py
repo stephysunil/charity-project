@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .form import sponsorAddForm,sponsorForm,userForm,userAddForm
 from django.contrib import messages, auth
-from .models import UserDetail,SponsorDetail,SponsorShip
+from .models import UserDetail,SponsorDetail,SponsorShip,Feedback
 
 # Create your views here.
 def index(request):
@@ -37,6 +37,14 @@ def logout(request):
     return redirect('/')
 
 def feed(request):
+    if request.method == 'POST':
+        name=request.POST['name']
+        message=request.POST['message']
+        phone=request.POST['phone']
+        email=request.POST['email']
+        rev=Feedback.objects.create(uname =name,message=message,email=email,mobile_no=phone)
+        rev.save()
+        return redirect('/')
     return render(request,'appname/feedback.html')
 
 def regspo(request):
