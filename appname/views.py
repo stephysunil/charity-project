@@ -90,5 +90,9 @@ def userboard(request):
 def pay(request):
     return render(request,'appname/payment.html')
 
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
+
 
 
