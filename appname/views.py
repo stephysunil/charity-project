@@ -39,6 +39,9 @@ def logout(request):
 def feed(request):
     return render(request,'appname/feedback.html')
 
+def seefeed(request):
+    return render(request,'appname/seefeed.html')
+
 def regspo(request):
     registered = False
     if request.method == 'POST':
@@ -93,6 +96,7 @@ def pay(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
 
 
 

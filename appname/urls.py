@@ -1,10 +1,11 @@
 from django.urls import path
-from .views import index,feed,login,regspo,regus,spoboard,userboard,pay,logout
+from .views import index,feed,login,regspo,regus,spoboard,userboard,pay,logout,seefeed
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('',index,name='index'),
-    path ('feed/',feed),
+    path ('feed/',feed,name ="feed"),
+    path ('seefeed/',seefeed,name="seefeed"),
     path ('login/',login,name="login"),
     path ('logout/',logout, name="logout"),
     path ('regspo/',regspo, name="registers"),
