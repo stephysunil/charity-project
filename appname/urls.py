@@ -10,7 +10,7 @@ urlpatterns = [
     path ('logout/',logout, name="logout"),
     path ('regspo/',regspo, name="registers"),
     path ('regus/',regus, name="registeru"),
-    path ('pay/<str:patient>/<str:uaddress>/<int:umobile_no>/<str:ulocation>/<str:description>/<int:no_year>',pay,name="pay"),
+    path ('pay/<str:patient>/<str:uaddress>/<int:umobile_no>/<str:ulocation>/',pay,name="pay"),
     path('spoboard/',spoboard,name="sponsor_dashboard"),
     path ('userboard/',userboard,name="user_dashboard"),
 ]

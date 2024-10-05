@@ -42,8 +42,8 @@ class SponsorShip(models.Model):
     year=models.CharField( max_length=4,null=True)
     cvv=models.CharField( max_length=3,null=True)
 
-    # def __str__(self):
-    #     return self.sname
+    def __str__(self):
+        return self.sname
 
 class MedicalTeam(models.Model):
     member1name = models.CharField( max_length=50)

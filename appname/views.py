@@ -106,23 +106,21 @@ def userboard(request):
    
     return render(request,'appname/userboard.html')
 
-def pay(request, patient=None, uaddress=None, umobile_no=None, ulocation=None, description=None, no_year=None):
+def pay(request, patient=None, uaddress=None, umobile_no=None, ulocation=None):
     if request.method == 'POST':
         user = request.user
-        patient = request.POST['patient']
-        uaddress = request.POST['uaddress']
-        umobile_no = request.POST['umobile_no']
-        ulocation = request.POST['ulocation']
-        description = request.POST['description']
-        no_year = request.POST['no_year']
+        patient = patient
+        uaddress = uaddress
+        umobile_no = umobile_no
+        ulocation = ulocation
         card=request.POST['card']
         year=request.POST['year']
         cvv=request.POST['cvv']
         month=request.POST['month']
         amount=request.POST['amount']
-        pay = SponsorShip.objects.create(card=card,year=year,cvv=cvv,month=month,amount=amount,sname=user.username,uname=patient, uaddress=uaddress, umobile_no=umobile_no, ulocation=ulocation, description=description, no_year=no_year)
+        pay = SponsorShip.objects.create(cardnumber=card,year=year,cvv=cvv,month=month,amount=amount,sname=user.username,uname=patient, uaddress=uaddress, umobile_no=umobile_no, ulocation=ulocation)
         pay.save()
-        return redirect('pay')
+        return redirect('/pay')
     return render(request, 'appname/payment.html')
 
     

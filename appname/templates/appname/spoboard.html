@@ -28,7 +28,7 @@
           <p>{{i.ulocation}}</p>
           <p>{{i.description}}</p>
           <p>{{i.no_year}}</p>
-      <a class="read_more" href="{% url 'pay' i.patient i.uaddress i.umobile_no i.ulocation i.description i.no_year %}">sponsor now</a>
+          <a class="read_more" href="{% url 'pay' i.patient i.uaddress i.umobile_no i.ulocation %}">sponsor now</a>
     </div>
                {% endfor %}
                  
