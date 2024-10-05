@@ -105,6 +105,9 @@ def spoboard(request):
 def userboard(request):
    
     return render(request,'appname/userboard.html')
+def sponsored(request):
+   
+    return render(request,'appname/sponsored.html')
 
 def pay(request, patient=None, uaddress=None, umobile_no=None, ulocation=None):
     if request.method == 'POST':
@@ -120,10 +123,10 @@ def pay(request, patient=None, uaddress=None, umobile_no=None, ulocation=None):
         amount=request.POST['amount']
         pay = SponsorShip.objects.create(cardnumber=card,year=year,cvv=cvv,month=month,amount=amount,sname=user.username,uname=patient, uaddress=uaddress, umobile_no=umobile_no, ulocation=ulocation)
         pay.save()
-        return redirect('/pay')
+        return redirect('/sponsored')
     return render(request, 'appname/payment.html')
 
-    
+
 
 def logout(request):
     auth.logout(request)
