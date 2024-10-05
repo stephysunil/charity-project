@@ -28,7 +28,7 @@
           <p>{{i.ulocation}}</p>
           <p>{{i.description}}</p>
           <p>{{i.no_year}}</p>
-      <a class="read_more" href="{% url 'payment' i.name i.salary i.worker_type i.phone %}">Book now</a>
+      {% comment %} <a class="read_more" href="{% url 'payment' i.patient i.uaddress i.umobile_no i.ulocation i.description i.no_year %}">sponsor now</a> {% endcomment %}
     </div>
                {% endfor %}
                  
