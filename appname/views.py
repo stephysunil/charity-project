@@ -16,7 +16,6 @@ def login(request):
         username = request.POST['username']
         password = request.POST['password']
         user = auth.authenticate(username=username, password=password)
-
         if user is not None:
             auth.login(request, user)
             try:
@@ -107,8 +106,19 @@ def userboard(request):
    
     return render(request,'appname/userboard.html')
 
-def pay(request):
-    return render(request,'appname/payment.html')
+def pay(request, patient=None, uaddress=None, umobile_no=None, ulocation=None, description=None, no_year=None):
+    if request.method == 'POST':
+        user = request.user
+        patient = request.POST['patient']
+        uaddress = request.POST['uaddress']
+        umobile_no = request.POST['umobile_no']
+        ulocation = request.POST['ulocation']
+        description = request.POST['description']
+        no_year = request.POST['no_year']
+        pay = SponsorShip.objects.create(sname=user.username,uname=patient, uaddress=uaddress, umobile_no=umobile_no, ulocation=ulocation, description=description, no_year=no_year)
+        pay.save()
+        return redirect('pay')
+    return render(request, 'appname/payment.html')
 
     
 
