@@ -44,7 +44,7 @@ def feed(request):
         email=request.POST['email']
         rev=Feedback.objects.create(uname =name,message=message,email=email,mobile_no=phone)
         rev.save()
-        return redirect('/')
+        return redirect('/userboard')
     return render(request,'appname/feedback.html')
 
 def seefeed(request):
