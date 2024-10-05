@@ -97,9 +97,14 @@ def regus(request):
     })
 
 def spoboard(request):
-    return render(request,'appname/spoboard.html')
+    obj=UserDetail.objects.all()
+    context={
+    'obj':obj,
+    }
+    return render(request,'appname/spoboard.html',context)
 
 def userboard(request):
+   
     return render(request,'appname/userboard.html')
 
 def pay(request):

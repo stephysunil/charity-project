@@ -17,4 +17,20 @@
     <h2>
         Sponsor  Dashboard ....
     </h2>
+<div class="d-flex flex-row bd-highlight mb-3">
+    {% for  i in obj %}
+    
+    <div class="p-2 bd-highlight" style="width: 15rem;">
+        <i><img src="{{i.uphoto.url}}" alt="#" height="150" width="200" class="me-3"/></i>
+          <p>{{i.patient}}</p>
+          <p>{{i.uaddress}}</p>
+          <p>{{i.umobile_no}}</p>
+          <p>{{i.ulocation}}</p>
+          <p>{{i.description}}</p>
+          <p>{{i.no_year}}</p>
+      <a class="read_more" href="{% url 'payment' i.name i.salary i.worker_type i.phone %}">Book now</a>
+    </div>
+               {% endfor %}
+                 
+</div>
 {% endblock %}
