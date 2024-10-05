@@ -1,6 +1,19 @@
 {% extends "appname/_base.html" %}
 
 {%block content%}
+{% block navbar%}
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="{% url 'user_dashboard' %}"class="active">Home<br></a></li>
+        {% comment %} <li><a href="#about">About</a></li> {% endcomment %}
+        <li><a href="{% url 'feed' %}">feedback</a></li>
+
+        <li><a href="{% url 'logout' %}">Logout </a></li>
+   
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+    {%endblock%}
 <html>
     <style>
         /* CSS for feedback form */
