@@ -24,3 +24,4 @@ class sponsorAddForm(forms.ModelForm):
     class Meta():
         model=SponsorDetail
         fields=['smobile_no']
+
