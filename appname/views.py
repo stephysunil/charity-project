@@ -5,7 +5,11 @@ from .models import UserDetail,SponsorDetail,SponsorShip,Feedback
 
 # Create your views here.
 def index(request):
-    return render(request, 'appname/index.html')
+    rev=Feedback.objects.all()
+    context = {
+        'rw':rev
+        }
+    return render(request, 'appname/index.html',context)
 
 def login(request):
     if request.method == 'POST':
