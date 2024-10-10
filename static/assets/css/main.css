@@ -1731,3 +1731,82 @@ section,
 .heading{
   color:white;
 }
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #f6d365;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+  }
+
+
+   /* CSS for feedback form */
+   .form-section {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-section-heading {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .field-wrap {
+    margin-bottom: 15px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .input[type="text"],
+  .input[type="email"],
+  .input[type="textarea"] {
+    width: 100%;
+  }
+
+  textarea.input {
+    height: 100px;
+    resize: vertical;
+  }
+
+  .cnt {
+    text-align: center;
+  }
+
+  button[type="Submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button[type="Submit"]:hover {
+    background-color: #0056b3;
+  }

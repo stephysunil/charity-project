@@ -133,5 +133,14 @@ def logout(request):
     return redirect('/')
 
 
+def about(request):
+    user = request.user
+    try:
+        obj = UserDetail.objects.get(patient=user)
+    except UserDetail.DoesNotExist:
+        obj = None 
 
-
+    context = {
+        'obj': obj,
+    }
+    return render(request, 'appname/about.html', context)

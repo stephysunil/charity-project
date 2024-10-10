@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index,feed,login,regspo,regus,spoboard,userboard,pay,logout,seefeed,sponsored
+from .views import index,feed,login,regspo,regus,spoboard,userboard,pay,logout,seefeed,sponsored,about
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
@@ -7,6 +7,7 @@ urlpatterns = [
     path ('feed/',feed,name ="feed"),
     path ('seefeed/',seefeed,name="seefeed"),
     path ('login/',login,name="login"),
+    path ('about/',about,name="about"),
     path ('logout/',logout, name="logout"),
     path ('regspo/',regspo, name="registers"),
     path ('regus/',regus, name="registeru"),

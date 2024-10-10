@@ -60,4 +60,18 @@ class Feedback(models.Model):
         return self.uname
     
 
+class Message(models.Model):
+    uname = models.CharField(max_length=50)
+    message = models.CharField(max_length=50)
+    def __str__(self):
+        return self.uname
+
+class contact(models.Model):
+    uname = models.CharField( max_length=50)
+    mobile_no = models.BigIntegerField()
+    email = models.CharField(max_length=50)
+    message = models.CharField( max_length=50)
+    def __str__(self):
+        return self.uname
+
 
