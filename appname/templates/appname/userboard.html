@@ -2,6 +2,24 @@
 {% load static %}
 
 {% block navbar%}
+<style>
+  .container {
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px; /* Default font size */
+  }
+  
+  .approved {
+    background-color: #A0D683; /* dark green */
+    color: #000000; /* black */
+  }
+  
+  .not-approved {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red */
+  }
+</style>  
 <nav id="navmenu" class="navmenu">
   <ul>
     <li><a href="#hero" class="active">Home<br></a></li>
@@ -17,15 +35,24 @@
 {%block content%}
 
 <h2>
-    User Dashboard ....
+   
 </h2>
-<div class="container">
+{% comment %} <div class="container">
   {% if obj.is_approved %}
 You are Approved user
 {% else %}
 Not Approved
 {% endif %}
+</div> {% endcomment %}
+
+<div class="container {% if obj.is_approved %}approved{% else %}not-approved{% endif %}">
+  {% if obj.is_approved %}
+    You are an Approved user
+  {% else %}
+    Not Approved
+  {% endif %}
 </div>
+<br><br>
 
 
 {% endblock %}

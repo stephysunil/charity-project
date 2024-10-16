@@ -1,4 +1,5 @@
 {% extends "appname/_base.html" %}
+{% load static %}
 {% block navbar%}
 <nav id="navmenu" class="navmenu">
   <ul>
@@ -16,7 +17,8 @@
 {% comment %} <h2> profile of user</h2>
         <p>Years: {{ obj.no_year }}</p> {% endcomment %}
         
-<section class="vh-100" style="background-color: #f4f5f7;">
+<section class="vh-100" style="background-color: #629584;"background-image: "{% static 'assets/img/backgr2.jpg' %}"; background-size: cover; background-position: center;">
+  
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-lg-6 mb-4 mb-lg-0">
