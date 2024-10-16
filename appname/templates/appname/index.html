@@ -214,10 +214,7 @@
         <div class="col-lg-3">
           <ul class="nav nav-tabs flex-column">
              <li class="nav-item">
-              <a class="nav-link active show" data-bs-toggle="tab" href="#departments-tab-1">Cardiology</a>
-            </li> 
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-2">Prosthetics and Orthotics</a>
+              <a class="nav-link active show" data-bs-toggle="tab" href="#departments-tab-1">Prosthetics and Orthotics</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-3">Psychology/Psychiatry</a>
@@ -232,7 +229,7 @@
         </div>
         <div class="col-lg-9 mt-4 mt-lg-0">
           <div class="tab-content">
-             <div class="tab-pane active show" id="departments-tab-1">
+             {% comment %} <div class="tab-pane active show" id="departments-tab-1">
               <div class="row">
                 <div class="col-lg-8 details order-2 order-lg-1">
                   <h3>Cardiology</h3>
@@ -243,8 +240,8 @@
                   <img src="{% static 'assets/img/departments-1.jpg' %}" alt="" class="img-fluid">
                 </div>
               </div>
-            </div>  
-            <div class="tab-pane " id="departments-tab-2">
+            </div>   {% endcomment %}
+            <div class="tab-pane active show" id="departments-tab-1">
               <div class="row">
                 <div class="col-lg-8 details order-2 order-lg-1">
                   <h3>Prosthetics and Orthotics</h3>

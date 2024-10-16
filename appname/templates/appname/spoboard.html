@@ -4,7 +4,7 @@
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="#hero" class="active">Home<br></a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="{% url 'sponsored' %}">About</a></li>
 
         <li><a href="{% url 'logout' %}">Logout </a></li>
    
@@ -17,10 +17,12 @@
         Sponsor  Dashboard ....
     </h2>
 <div class="d-flex flex-row bd-highlight mb-3">
+
     {% for  i in obj %}
-    
+    {% if i.is_approved %}
     <div class="p-2 bd-highlight" style="width: 15rem;">
         <i><img src="{{i.uphoto.url}}" alt="#" height="150" width="200" class="me-3"/></i>
+       
           <p>{{i.patient}}</p>
           <p>{{i.uaddress}}</p>
           <p>{{i.umobile_no}}</p>
@@ -29,7 +31,7 @@
           <p>{{i.no_year}}</p>
           <a class="read_more" href="{% url 'pay' i.patient i.uaddress i.umobile_no i.ulocation %}">sponsor now</a>
     </div>
-               {% endfor %}
-                 
+    {%endif%}
+    {% endfor %}  
 </div>
 {% endblock %}

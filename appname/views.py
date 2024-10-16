@@ -103,8 +103,15 @@ def spoboard(request):
     return render(request,'appname/spoboard.html',context)
 
 def userboard(request):
-   
-    return render(request,'appname/userboard.html')
+    user = request.user
+    try:
+        obj = UserDetail.objects.get(patient=user)
+    except UserDetail.DoesNotExist:
+        obj = None 
+    context = {
+        'obj': obj,
+    }
+    return render(request,'appname/userboard.html',context)
 def sponsored(request):
    
     return render(request,'appname/sponsored.html')

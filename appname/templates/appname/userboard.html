@@ -19,4 +19,13 @@
 <h2>
     User Dashboard ....
 </h2>
+<div class="container">
+  {% if obj.is_approved %}
+You are Approved user
+{% else %}
+Not Approved
+{% endif %}
+</div>
+
+
 {% endblock %}
