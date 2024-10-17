@@ -105,6 +105,8 @@ def spoboard(request):
 def userboard(request):
     user = request.user
     try:
+        books = []
+        books = SponsorShip.objects.filter(sname=.sname).all() 
         obj = UserDetail.objects.get(patient=user)
     except UserDetail.DoesNotExist:
         obj = None 
@@ -112,9 +114,15 @@ def userboard(request):
         'obj': obj,
     }
     return render(request,'appname/userboard.html',context)
+    
 def sponsored(request):
-   
-    return render(request,'appname/sponsored.html')
+    user = request.user
+    books = []
+    books = SponsorShip.objects.filter(patient=user).all() 
+    context = {
+        'sponsordetail': books,
+    }
+    return render(request, 'appname/sponsored.html', context)
 
 def pay(request, patient=None, uaddress=None, umobile_no=None, ulocation=None):
     if request.method == 'POST':
@@ -151,3 +159,13 @@ def about(request):
         'obj': obj,
     }
     return render(request, 'appname/about.html', context)
+
+def contact(request):
+     if request.method == 'POST':
+        name=request.POST['name']
+        message=request.POST['message']
+        phone=request.POST['phone']
+        email=request.POST['email']
+        rev=Feedback.objects.create(uname =name,message=message,email=email,mobile_no=phone)
+        rev.save()
+        return redirect('')

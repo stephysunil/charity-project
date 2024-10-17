@@ -21,8 +21,6 @@ class SponsorDetail(models.Model):
         smobile_no = models.BigIntegerField(null=True)
         is_patient=models.BooleanField(default=False)
         
-
-
         def __str__(self):
             return self.sponsor.username
 
@@ -66,7 +64,7 @@ class Message(models.Model):
     def __str__(self):
         return self.uname
 
-class contact(models.Model):
+class Contact(models.Model):
     uname = models.CharField( max_length=50)
     mobile_no = models.BigIntegerField()
     email = models.CharField(max_length=50)
