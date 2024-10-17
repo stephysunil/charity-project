@@ -54,18 +54,16 @@ Not Approved
   {% endif %}
 </div>
 
-{% for i in sponsordetail %}
+{% for i in obj %}
       
 <div class="col ">
    <div class="container2 mx-4">
-      <p>Sponsor Name Name:</p>
+      <p>Sponsor Name</p>
       <h3>{{i.uname}}</h3>
       <p>Amount</p>
       <h3>{{i.amount}}</h3>
    </div>
 </div>
-
-
 {% endfor %}
 <br><br>
 

@@ -12,6 +12,7 @@ class UserDetail(models.Model):
     description = models.CharField( max_length=100)
     no_year = models.IntegerField()
     is_approved= models.BooleanField(default=False)
+    name=models.CharField(max_length=250,null=True)
 
     def __str__(self):
         return self.patient.username

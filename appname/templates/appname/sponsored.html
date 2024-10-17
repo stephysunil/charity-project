@@ -4,7 +4,7 @@
 
 <nav id="navmenu" class="navmenu">
     <ul>
-      <li><a href="{% url 'user_dashboard' %}"class="active">Home<br></a></li>
+      <li><a href="{% url 'sponsor_dashboard' %}"class="active">Home<br></a></li>
       
       {% comment %} <li><a href="{% url 'feed' %}">Review</a></li> {% endcomment %}
 
@@ -13,15 +13,34 @@
     </ul>
     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
   </nav>
-  {% for i in userbooking %}
-  {{i.uname}}
-{% endfor %}
+ 
 
   
   
 {% endblock %}
 {%block content%}
+ <!-- success -->
 
-    
-
+ {% if messages %}
+ <ul class="messages">
+  {% for message in messages %}
+      <center>
+          <h1{% if message.tags %} class="{{ message.tags }}"{% endif %} style="color: green;">
+              {{ message }}
+          </h1>
+      </center>
+  {% endfor %}
+</ul>
+{% endif %}
+<h2>You have sponsored:</h2>
+<div class="d-flex flex-row bd-highlight mb-3">
+{% for i in userbooking %}
+<div class="p-2 bd-highlight" style="width: 15rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+  {{i.uname}}<br>
+  {{i.amount}}<br>
+  {{i.ulocation}}<br>
+  <p style="color: green;">Sponsored</p>
+</div>
+{% endfor %}
+</div>
 {%endblock%}
