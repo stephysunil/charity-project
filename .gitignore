@@ -1,3 +1,5 @@
 
 /__pycache__
 /migrations
+/appname/__pycache__
+/config/__pycache__
