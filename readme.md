@@ -2,7 +2,7 @@
 Charity website dedicated to sponsoring free limb implants for amputees in need
 
 # Screenshots
-![Screenshot](/screemshots/1.png?raw=true "Screenshot")
+![Screenshot](/screenshots/1.png?raw=true "Screenshot")
 ![Screenshot](/screenshots/2.png?raw=true "Screenshot")
 ![Screenshot](/screenshots/3.png?raw=true "Screenshot")
 
